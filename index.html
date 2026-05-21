@@ -2,94 +2,94 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>오늘의 증시 브리핑</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>오늘의 증시 — 2026-05-21</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; padding: 16px; }
-  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
-  h1 { font-size: 1.4em; margin: 0 0 4px 0; color: #58a6ff; }
-  h2 { font-size: 1em; color: #8b949e; margin: 0 0 10px 0; font-weight: normal; }
-  .outlook { font-size: 2em; font-weight: bold; color: #f39c12; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .stat { background: #0d1117; border-radius: 8px; padding: 10px; }
-  .stat-label { font-size: 0.75em; color: #8b949e; }
-  .stat-value { font-size: 1.1em; font-weight: bold; margin-top: 2px; }
-  .up { color: #2ecc71; } .down { color: #e74c3c; }
-  ul { margin: 8px 0; padding-left: 20px; }
-  li { margin-bottom: 8px; line-height: 1.5; }
-  .tag { display: inline-block; background: #21262d; border-radius: 6px; padding: 3px 10px; font-size: 0.85em; margin: 3px; }
-  .updated { font-size: 0.75em; color: #8b949e; text-align: right; margin-top: 8px; }
-  .badge { display:inline-block; padding:2px 8px; border-radius:999px; font-size:0.8em; font-weight:bold; }
-  .badge-red { background:#3d1a1a; color:#e74c3c; }
-  .badge-green { background:#1a3d2a; color:#2ecc71; }
+:root{color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f6fa;color:#1a1a2e;font-size:14px}
+.header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:20px 24px}
+.header h1{font-size:18px;font-weight:700}
+.header .sub{font-size:12px;opacity:.7;margin-top:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px}
+.card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.full{grid-column:1/-1}
+.card-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#6b7280;margin-bottom:12px}
+.outlook-banner{display:flex;align-items:center;gap:12px;border-radius:10px;padding:14px 16px;margin-bottom:12px;background:linear-gradient(90deg,#fffbeb,#fef3c7);border:1px solid #fde68a}
+.outlook-icon{font-size:28px}
+.outlook-val{font-size:18px;font-weight:700;color:#92400e}
+.outlook-sector{font-size:12px;color:#374151;margin-top:2px}
+.tag{background:#ede9fe;color:#5b21b6;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;display:inline-block;margin:2px}
+.idx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.idx-item{background:#f9fafb;border-radius:8px;padding:10px 12px}
+.idx-name{font-size:11px;color:#6b7280;margin-bottom:3px}
+.idx-val{font-size:18px;font-weight:700}
+.idx-chg{font-size:12px;margin-top:1px}
+.up{color:#10b981}.down{color:#ef4444}.flat{color:#6b7280}
+.macro-list{display:flex;flex-direction:column;gap:8px}
+.macro-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:#f9fafb;border-radius:8px}
+.macro-label{font-size:12px;color:#6b7280}
+.macro-val{font-size:13px;font-weight:600}
+.issue-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+.dot{width:6px;height:6px;border-radius:50%;background:#6366f1;margin-top:5px;flex-shrink:0}
+.issue-text{font-size:13px;line-height:1.5;color:#374151}
+.stock-item{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#f9fafb;border-radius:8px;margin-bottom:8px}
+.sname{font-size:13px;font-weight:600}
+.scode{font-size:11px;color:#9ca3af;margin-top:1px}
+.sreason{font-size:11px;color:#6b7280;text-align:right;max-width:140px;line-height:1.4}
+.hold-item{padding:10px 12px;background:#f9fafb;border-radius:8px;margin-bottom:8px}
+.hold-top{display:flex;justify-content:space-between;margin-bottom:4px}
+.hname{font-size:13px;font-weight:600}
+.hpct{font-size:13px;font-weight:700}
+.act-hold{font-size:11px;font-weight:600;color:#6366f1}
+.act-cut{font-size:11px;font-weight:600;color:#ef4444}
+.act-buy{font-size:11px;font-weight:600;color:#10b981}
+.footer{text-align:center;padding:16px;font-size:11px;color:#9ca3af}
 </style>
 </head>
 <body>
-
-<div class="card">
-  <h1>☀️ 2026년 05월 21일 증시 브리핑</h1>
-  <h2>오전 7:30 자동 생성</h2>
-  <div class="outlook">혼조 ↔️</div>
-  <p style="margin:10px 0;font-size:0.9em;line-height:1.6;">
-    엔비디아 1Q 어닝서프라이즈(매출 816억달러, +85% YoY, 2Q 가이던스 910억달러) + 삼성전자 노사합의 → 코스피 역대급 <strong class="up">+8.42%</strong> 급등, 7,815pt 마감.<br>
-    단, 시간외 S&P500 선물 하락·WTI 100달러 돌파·이란 핵 우라늄 보유 유지 보도 → 내일 차익실현 혼조 예상.
-  </p>
+<div class="header">
+  <h1>📊 오늘의 증시</h1>
+  <div class="sub">2026년 05월 21일 목요일 · 자동 생성</div>
 </div>
-
-<div class="card">
-  <h2 style="color:#58a6ff;font-weight:bold;font-size:1em;">🌎 미국 증시 (5/20 마감)</h2>
-  <div class="grid">
-    <div class="stat"><div class="stat-label">나스닥</div><div class="stat-value up">26,270 +1.54%</div></div>
-    <div class="stat"><div class="stat-label">S&P500</div><div class="stat-value up">7,433 +1.08%</div></div>
-    <div class="stat"><div class="stat-label">다우</div><div class="stat-value up">50,009 +1.31%</div></div>
-    <div class="stat"><div class="stat-label">VIX</div><div class="stat-value">17.44 ▼안정</div></div>
-    <div class="stat"><div class="stat-label">미국채 10Y</div><div class="stat-value">4.572%</div></div>
-    <div class="stat"><div class="stat-label">원/달러</div><div class="stat-value">1,509원</div></div>
-    <div class="stat" style="grid-column:1/-1"><div class="stat-label">WTI 유가</div><div class="stat-value up">$99.58 (+1.34%)</div></div>
+<div class="grid">
+  <div class="card full">
+    <div class="card-title">🇰🇷 오늘 국장 예상</div>
+    <div class="outlook-banner">
+      <div class="outlook-icon">📊</div>
+      <div>
+        <div style="font-size:11px;color:#6b7280">오늘 전망</div>
+        <div class="outlook-val">혼조 ↔️</div>
+        <div class="outlook-sector">AI반도체/HBM, 항공, 양자컴퓨팅</div>
+      </div>
+    </div>
+    <div><span class="tag">AI반도체/HBM</span><span class="tag">항공</span><span class="tag">양자컴퓨팅</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">🌎 어제 미국 마감</div>
+    <div class="idx-grid"><div class="idx-item"><div class="idx-name">나스닥</div><div class="idx-val">26,293</div><div class="idx-chg up">+0.09%</div></div><div class="idx-item"><div class="idx-name">S&P 500</div><div class="idx-val">7,445</div><div class="idx-chg up">+0.17%</div></div><div class="idx-item"><div class="idx-name">다우</div><div class="idx-val">50,285</div><div class="idx-chg up">+0.55%</div></div><div class="idx-item"><div class="idx-name">VIX</div><div class="idx-val">16.76</div><div class="idx-chg flat">▼안정</div></div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">📈 매크로 지표</div>
+    <div class="macro-list">
+      <div class="macro-item"><span class="macro-label">미국채 10Y</span><span class="macro-val">4.586%</span></div>
+      <div class="macro-item"><span class="macro-label">원달러 환율</span><span class="macro-val">1,508원</span></div>
+      <div class="macro-item"><span class="macro-label">WTI 유가</span><span class="macro-val">$98.00 (이란 전쟁 고유가)</span></div>
+    </div>
+  </div>
+  <div class="card full">
+    <div class="card-title">⚡ 핵심 이슈</div>
+    <div class="issue-item"><div class="dot"></div><div class="issue-text">엔비디아 호실적</div></div><div class="issue-item"><div class="dot"></div><div class="issue-text">다우 사상최고치 경신</div></div><div class="issue-item"><div class="dot"></div><div class="issue-text">이란 협상 진전 기대 유가하락 항공주 수혜</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">💎 오늘 추천 종목</div>
+    <div class="stock-item"><div><div class="sname">대한항공</div><div class="scode">003490</div></div><div class="sreason">이란협상+유가하락 수혜 RSI55</div></div><div class="stock-item"><div><div class="sname">네이버</div><div class="scode">035420</div></div><div class="sreason">AI모멘텀 RSI36 과매도근접</div></div><div class="stock-item"><div><div class="sname">한미반도체</div><div class="scode">042700</div></div><div class="sreason">엔비디아 후방수혜 RSI45</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">📦 보유 종목 현황</div>
+    <div class="hold-item"><div class="hold-top"><div class="hname">교보증권</div><div class="hpct down">-14.9%</div></div><div class="hold-bot"><div class="act-hold">보유유지</div></div></div><div class="hold-item"><div class="hold-top"><div class="hname">하림</div><div class="hpct up">+0.67%</div></div><div class="hold-bot"><div class="act-hold">보유유지</div></div></div>
   </div>
 </div>
-
-<div class="card">
-  <h2 style="color:#58a6ff;font-weight:bold;font-size:1em;">📊 오늘 국장 마감 (5/21)</h2>
-  <div class="grid">
-    <div class="stat"><div class="stat-label">코스피</div><div class="stat-value up">7,815.59 +8.42%</div></div>
-    <div class="stat"><div class="stat-label">코스닥</div><div class="stat-value up">+4.73%</div></div>
-    <div class="stat" style="grid-column:1/-1"><div class="stat-label">수급 (코스피)</div><div class="stat-value">기관 +2.89조 / 외국인 -2,434억 / 개인 -2.64조</div></div>
-  </div>
-</div>
-
-<div class="card">
-  <h2 style="color:#58a6ff;font-weight:bold;font-size:1em;">🎯 주목 섹터</h2>
-  <span class="tag">AI반도체/HBM</span>
-  <span class="tag">방산</span>
-  <span class="tag">이차전지</span>
-</div>
-
-<div class="card">
-  <h2 style="color:#58a6ff;font-weight:bold;font-size:1em;">💎 추천 종목</h2>
-  <ul>
-    <li><strong>한화에어로스페이스(012450)</strong> — 방산 수혜·중동 지정학 리스크 지속<br><small style="color:#8b949e;">진입가: 전일종가 ±1% | 목표가: 52주 고점 수준 | 손절가: 진입가 -4%</small></li>
-    <li><strong>삼성SDI(006400)</strong> — 이차전지 강세·전고체 배터리 기술력 선두<br><small style="color:#8b949e;">진입가: 전일종가 ±1% | 목표가: 진입가 +8~10% | 손절가: 진입가 -4%</small></li>
-    <li><strong>한미반도체(042700)</strong> — AI 반도체 장비 수혜·엔비디아 수주 지속<br><small style="color:#8b949e;">진입가: 전일종가 ±1% | 목표가: 진입가 +7~9% | 손절가: 진입가 -4%</small></li>
-  </ul>
-  <p style="font-size:0.8em;color:#8b949e;">⚠️ 내일 혼조 예상 시나리오 고려, 장 초반 과도 급락 시 분할 매수 권장</p>
-</div>
-
-<div class="card">
-  <h2 style="color:#58a6ff;font-weight:bold;font-size:1em;">📦 보유 종목 현황</h2>
-  <ul>
-    <li>
-      <strong>교보증권(030610)</strong> 매입 14,756원 → 현재 11,800원 <span class="badge badge-red">-20.22%</span><br>
-      예상: ➡️ | <strong>보유유지</strong> — 현재 -20% 손실 구간, 증권주 일부 수혜 가능하나 추가 손절보다 모멘텀 확인 후 판단
-    </li>
-    <li>
-      <strong>하림(136480)</strong> 매입 2,970원 → 현재 2,970원 <span class="badge badge-red">-0.23%</span><br>
-      예상: ➡️ | <strong>보유유지</strong> — 음식료 섹터, 오늘 랠리 수혜 제한적. 본업 안정적, 단기 모멘텀 부재
-    </li>
-  </ul>
-</div>
-
-<div class="updated">최종 업데이트: 2026-05-21 07:30 | 자동 생성</div>
-
+<div class="footer">⚠️ 본 페이지는 Claude AI가 자동 생성한 참고자료입니다. 투자 최종 결정은 본인 판단으로 하세요.</div>
 </body>
 </html>
