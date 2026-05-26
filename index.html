@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>오늘의 증시 — 2026-05-27</title>
+<style>
+:root{color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f6fa;color:#1a1a2e;font-size:14px}
+.header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;padding:20px 24px}
+.header h1{font-size:18px;font-weight:700}
+.header .sub{font-size:12px;opacity:.7;margin-top:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:16px}
+.card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.full{grid-column:1/-1}
+.card-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#6b7280;margin-bottom:12px}
+.outlook-banner{display:flex;align-items:center;gap:12px;border-radius:10px;padding:14px 16px;margin-bottom:12px;background:linear-gradient(90deg,#ecfdf5,#d1fae5);border:1px solid #a7f3d0}
+.outlook-icon{font-size:28px}
+.outlook-val{font-size:18px;font-weight:700;color:#065f46}
+.outlook-sector{font-size:12px;color:#374151;margin-top:2px}
+.tag{background:#ede9fe;color:#5b21b6;border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;display:inline-block;margin:2px}
+.idx-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.idx-item{background:#f9fafb;border-radius:8px;padding:10px 12px}
+.idx-name{font-size:11px;color:#6b7280;margin-bottom:3px}
+.idx-val{font-size:18px;font-weight:700}
+.idx-chg{font-size:12px;margin-top:1px}
+.up{color:#10b981}.down{color:#ef4444}.flat{color:#6b7280}
+.macro-list{display:flex;flex-direction:column;gap:8px}
+.macro-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:#f9fafb;border-radius:8px}
+.macro-label{font-size:12px;color:#6b7280}
+.macro-val{font-size:13px;font-weight:600}
+.issue-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px}
+.dot{width:6px;height:6px;border-radius:50%;background:#6366f1;margin-top:5px;flex-shrink:0}
+.issue-text{font-size:13px;line-height:1.5;color:#374151}
+
+/* 추천 종목 카드 (현재가/목표가/손절가 포함) */
+.stock-card{background:#f9fafb;border-radius:10px;padding:12px;margin-bottom:10px}
+.stock-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.sname{font-size:14px;font-weight:700}
+.scode{font-size:11px;color:#9ca3af;margin-top:1px}
+.sreason{font-size:11px;color:#6b7280;text-align:right;max-width:140px;line-height:1.4}
+.price-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.price-item{background:#fff;border-radius:6px;padding:8px 6px;text-align:center}
+.price-label{font-size:10px;color:#9ca3af;margin-bottom:2px}
+.price-val{font-size:12px;font-weight:700}
+.price-val.cur{color:#1f2937}
+.price-val.tgt{color:#10b981}
+.price-val.stop{color:#ef4444}
+
+.hold-item{padding:10px 12px;background:#f9fafb;border-radius:8px;margin-bottom:8px}
+.hold-top{display:flex;justify-content:space-between;margin-bottom:4px}
+.hname{font-size:13px;font-weight:600}
+.hpct{font-size:13px;font-weight:700}
+.act-hold{font-size:11px;font-weight:600;color:#6366f1}
+.act-cut{font-size:11px;font-weight:600;color:#ef4444}
+.act-buy{font-size:11px;font-weight:600;color:#10b981}
+
+/* 장중 누적 섹션 */
+.update-card{background:#fff;border-radius:12px;padding:16px;margin:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,.07);border-left:4px solid #6366f1}
+.update-card.close{border-left-color:#f59e0b}
+.update-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.update-time{font-size:14px;font-weight:700;color:#1f2937}
+.update-temp{font-size:13px;font-weight:700;padding:4px 10px;border-radius:14px;background:#f3f4f6}
+.update-note{font-size:12px;color:#374151;background:#f9fafb;border-radius:8px;padding:8px 10px;margin-bottom:10px}
+.update-idx{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.update-idx-item{flex:1;min-width:80px;background:#f9fafb;border-radius:8px;padding:8px 10px;text-align:center}
+.update-idx-label{font-size:10px;color:#9ca3af}
+.update-idx-val{font-size:14px;font-weight:700;margin-top:2px}
+.update-section-title{font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.5px;margin:10px 0 6px}
+.update-row{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:#f9fafb;border-radius:8px;margin-bottom:6px;font-size:12px}
+.update-row-name{font-weight:600}
+.update-row-action{font-size:11px;font-weight:700}
+.update-row-meta{font-size:11px;color:#6b7280}
+.overnight-row{padding:10px;background:#fef3c7;border-radius:8px;margin-bottom:6px;font-size:12px}
+.overnight-name{font-weight:700;margin-bottom:3px}
+.overnight-reason{font-size:11px;color:#374151}
+
+.footer{text-align:center;padding:16px;font-size:11px;color:#9ca3af}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📊 오늘의 증시</h1>
+  <div class="sub">2026년 05월 27일 수요일 · 자동 생성</div>
+</div>
+<div class="grid">
+
+  <div class="card full">
+    <div class="card-title">🇰🇷 오늘 국장 예상</div>
+    <div class="outlook-banner">
+      <div class="outlook-icon">📈</div>
+      <div>
+        <div style="font-size:11px;color:#6b7280">오늘 전망</div>
+        <div class="outlook-val">강세 ⬆️</div>
+        <div class="outlook-sector">AI반도체/HBM, 전력인프라</div>
+      </div>
+    </div>
+    <div><span class="tag">AI반도체/HBM</span><span class="tag">전력인프라</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌎 어제 미국 마감</div>
+    <div class="idx-grid"><div class="idx-item">
+          <div class="idx-name">나스닥</div>
+          <div class="idx-val">26,656</div>
+          <div class="idx-chg up">+1.19%</div>
+        </div><div class="idx-item">
+          <div class="idx-name">S&P 500</div>
+          <div class="idx-val">7,519</div>
+          <div class="idx-chg up">+0.61%</div>
+        </div><div class="idx-item">
+          <div class="idx-name">다우</div>
+          <div class="idx-val">50,462</div>
+          <div class="idx-chg down">-0.23%</div>
+        </div><div class="idx-item">
+          <div class="idx-name">VIX</div>
+          <div class="idx-val">17.01</div>
+          <div class="idx-chg down">▼안정</div>
+        </div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📈 매크로 지표</div>
+    <div class="macro-list">
+      <div class="macro-item"><span class="macro-label">미국채 10Y</span><span class="macro-val">4.493%</span></div>
+      <div class="macro-item"><span class="macro-label">원달러 환율</span><span class="macro-val">1,503원</span></div>
+      <div class="macro-item"><span class="macro-label">WTI 유가</span><span class="macro-val">93.46 (-2.76%)</span></div>
+    </div>
+  </div>
+
+  <div class="card full">
+    <div class="card-title">⚡ 핵심 이슈</div>
+    <div class="issue-item">
+      <div class="dot"></div><div class="issue-text">Micron 시총 $1조 돌파·나스닥 신고가</div>
+    </div><div class="issue-item">
+      <div class="dot"></div><div class="issue-text">미국-이란 종전협상·유가 하락</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">💎 오늘 추천 종목</div>
+    <div class="stock-card">
+          <div class="stock-head">
+            <div>
+              <div class="sname">한미반도체</div>
+              <div class="scode">042700</div>
+            </div>
+            <div class="sreason">AI반도체 장비 수혜</div>
+          </div>
+          <div class="price-grid">
+            <div class="price-item"><div class="price-label">현재가</div><div class="price-val cur">329,000원</div></div>
+            <div class="price-item"><div class="price-label">목표가</div><div class="price-val tgt">340,000원</div></div>
+            <div class="price-item"><div class="price-label">손절가</div><div class="price-val stop">315,000원</div></div>
+          </div>
+        </div><div class="stock-card">
+          <div class="stock-head">
+            <div>
+              <div class="sname">HD현대일렉트릭</div>
+              <div class="scode">267260</div>
+            </div>
+            <div class="sreason">AI전력인프라 RSI반등</div>
+          </div>
+          <div class="price-grid">
+            <div class="price-item"><div class="price-label">현재가</div><div class="price-val cur">1,148,000원</div></div>
+            <div class="price-item"><div class="price-label">목표가</div><div class="price-val tgt">1,170,000원</div></div>
+            <div class="price-item"><div class="price-label">손절가</div><div class="price-val stop">1,050,000원</div></div>
+          </div>
+        </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📦 보유 종목 현황</div>
+    <div class="hold-item">
+          <div class="hold-top">
+            <div class="hname">대한항공</div>
+            <div class="hpct up">+2.43%</div>
+          </div>
+          <div class="hold-bot">
+            <div class="act-hold">보유유지</div>
+          </div>
+        </div><div class="hold-item">
+          <div class="hold-top">
+            <div class="hname">교보증권</div>
+            <div class="hpct down">-15.01%</div>
+          </div>
+          <div class="hold-bot">
+            <div class="act-hold">보유유지</div>
+          </div>
+        </div><div class="hold-item">
+          <div class="hold-top">
+            <div class="hname">하림</div>
+            <div class="hpct up">+0.34%</div>
+          </div>
+          <div class="hold-bot">
+            <div class="act-hold">보유유지</div>
+          </div>
+        </div>
+  </div>
+
+</div>
+
+<!-- INTRADAY_UPDATES_START -->
+<!-- INTRADAY_UPDATES_END -->
+
+<div class="footer">⚠️ 본 페이지는 Claude AI가 자동 생성한 참고자료입니다. 투자 최종 결정은 본인 판단으로 하세요.</div>
+</body>
+</html>
